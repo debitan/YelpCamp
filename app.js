@@ -26,8 +26,7 @@ var indexRoutes = require("./routes/index");
 // CONFIG
 // =================
 
-// mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser : true});
-mongoose.connect("mongodb://debitan:bCAasKvj2FkxA7G@ds251284.mlab.com:51284/yelpcamp", {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 mongoose.set('useFindAndModify', false);
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
